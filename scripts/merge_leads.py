@@ -40,6 +40,9 @@ while has_more:
 
     for lead in leads:
 
+        if last_lead and (lead['custom']['Channel'] != "WEB Inbound - TPR" or last_lead['custom']['Channel'] != "WEB Inbound - TPR"):
+            continue # restrict to WEB Inbound - TPR leads only, skip
+
         if last_lead and lead['id'] == last_lead['id']:
             continue # same lead, skip
 
